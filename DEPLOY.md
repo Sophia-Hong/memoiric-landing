@@ -23,3 +23,10 @@
 - 페이지 무게 예산: HTML < 10KB, 이미지 합 < 160KB, JS 0. 첫 페인트 경로 = HTML + hero만.
 - 카피/후기 수정 시: 후기는 PDP 리뷰 verbatim만 (자작 금지), 가격은 WC API 라이브 실측, voice.md 린트 (em-dash 0 등).
 - 랜딩 자체엔 GA4 없음 (무게 예산). 측정은 CTA의 `utm_campaign=pet_landing` → PDP GA4로.
+
+## 2026-07-29 오후 갱신
+
+- 히어로 = 공감 오프닝 (소현 카피: "사랑하는 가족을 잃었나요? 수많은 순간들이, 기억 속에 살아있기를" 번역).
+- 가격 = 디지털 강조 박스(42% off) + 전 셀 정가 취소선 (WC variations regular/sale 실측 2026-07-29). 가격 변경 시 이 표도 갱신 필수.
+- `/yt` 변형 (`yt/index.html`): CTA utm_source=youtube&utm_medium=organic_shorts. 이미지는 `/pet/img/` 절대경로 공유 (GH Pages 프리뷰에선 yt 이미지 깨짐 — 라이브 전용). .htaccess `^yt$ → /yt/ 301`.
+- `/pin`은 아직 PDP 302 유지.
