@@ -122,5 +122,19 @@ footer.site a{color:var(--soft)}
   Memoiric &middot; <a href="https://www.memoiric.com">memoiric.com</a> &middot; <a href="https://www.memoiric.com/privacy-policy/">Privacy policy</a>
 </footer>
 
+<script>
+/* 릴별 UTM 포워딩: /pet?utm_campaign=R30-xx 로 들어온 utm_*를 CTA 링크에 승계
+   (없으면 기존 pet_landing 고정값 유지). 외부 요청 0, ~0.3KB. */
+(function(){
+  var q=new URLSearchParams(location.search),utm={};
+  q.forEach(function(v,k){if(k.indexOf("utm_")===0)utm[k]=v;});
+  if(!Object.keys(utm).length)return;
+  document.querySelectorAll('a[href*="memoiric.com/product"]').forEach(function(a){
+    var u=new URL(a.href);
+    Object.keys(utm).forEach(function(k){u.searchParams.set(k,utm[k]);});
+    a.href=u.toString();
+  });
+})();
+</script>
 </body>
 </html>
